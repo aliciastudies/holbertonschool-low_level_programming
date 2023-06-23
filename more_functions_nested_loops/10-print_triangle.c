@@ -32,7 +32,7 @@ void print_triangle(int size)
 	}
 
 	current_line = 0;
-	while (current_line <= size)
+	while (current_line < size)
 	{
 		print_char(' ', (size = size - 1));
 		print_char('#', (current_line = current_line + 1));
