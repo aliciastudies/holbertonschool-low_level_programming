@@ -16,18 +16,6 @@ void print_char(char to_print, int how_many_times)
 	}
 }
 
-
-/**
- *end_line - prints a new line
- *
- *Return: 0
- */
-
-void end_line(void)
-{
-	_putchar('\n');
-}
-
 /**
  *print_triangle - prints a triangle followed by a new line
  *@size: input from user
@@ -44,10 +32,10 @@ void print_triangle(int size)
 	}
 
 	current_line = 0;
-	while (current_line < size)
+	while (current_line <= size)
 	{
 		print_char(' ', (size = size - 1));
 		print_char('#', (current_line = current_line + 1));
-		end_line();
+		_putchar('\n');
 	}
 }
