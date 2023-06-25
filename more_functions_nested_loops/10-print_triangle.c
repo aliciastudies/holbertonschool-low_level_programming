@@ -25,7 +25,7 @@ void print_char(char to_print, int how_many_times)
 void print_triangle(int size)
 {
 	int current_line;
-	int size_minus_1;
+	int size_minus_cl;
 
 	if (size <= 0)
 	{
@@ -33,21 +33,20 @@ void print_triangle(int size)
 	}
 
 	current_line = 1;
-	size_minus_1 = size - 1;
+	size_minus_cl = (size - current_line);
 	while (size >= current_line)
 	{
 		if (size >= current_line)
 		{
-			print_char(' ', (size_minus_1));
-			print_char('#', (current_line));
+			print_char(' ', (size_minus_cl);
+			print_char('#', (current_line);
 			_putchar('\n');
 		}
 
 		current_line = current_line + 1;
-		size_minus_1 = size_minus_1 - 1;
+		size_minus_cl = (size - current_line);
 
 	}
-	size = size + 1;
 
 }
 
