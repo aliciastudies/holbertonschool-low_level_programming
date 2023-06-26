@@ -19,7 +19,7 @@ void rev_string(char *s)
 	}
 	swap_one = length - 1;
 	swap_two = 0;
-	while (swap_two < length/2)
+	while (swap_two < length / 2)
 	{
 		temp = s[swap_two];
 		s[swap_two] = s[swap_one];
