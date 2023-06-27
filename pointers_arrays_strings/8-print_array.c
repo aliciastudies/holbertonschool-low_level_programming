@@ -15,9 +15,9 @@ void print_array(int *a, int n)
 	length = 0;
 	while (length < n)
 	{
-		if (length == n - 1)
+		if (length == n - 1) /* checks if current index is the last of the array */
 		{
-			printf("%d", a[length]);
+			printf("%d", a[length]); /* if so, print without space and comma */
 		}
 		else
 		{
