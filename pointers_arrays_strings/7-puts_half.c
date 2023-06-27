@@ -17,7 +17,7 @@ void puts_half(char *str)
 	{
 		length = length + 1;
 	}
-	length_of_the_string = length / 2;
+	length_of_the_string = (length + 1) / 2;
 	n = (length_of_the_string - 1) / 2;
 	while (length_of_the_string < length)
 	{
