@@ -12,12 +12,6 @@ void print_array(int *a, int n)
 {
 	int length;
 
-/*	length = 0;
-	while (a[length] != '\0')
-	{
-		length = length + 1;
-
-	} */
 	length = 0;
 	while (length < n)
 	{
