@@ -9,18 +9,18 @@
  * Return: 1 if true, 0 if false
  */
 
-int not_alpha(char c)
+int not_alpha(char character)
 {
 	char separators[] = {' ', '\t', '\n', '.'};
 	int index = 0;
 
 	while (separators[index] != '\0')
 	{
-		if (c == separators[index])
+		if (character == separators[index])
 			return (1);
 		index = index + 1;
 	}
-	return (0); /* if loop completes without finding a match, c is not a word separator  */
+	return (0); /* if loop completes without finding a match, character is not a word separator */
 }
 
 /**
@@ -32,16 +32,19 @@ int not_alpha(char c)
 
 char *cap_string(char *s)
 {
-	int i;
+	int index;
 
-	i = 0;
-	while (s[i] != '\0')
+	index = 0;
+	while (s[index] != '\0')
 	{
-		if ((s[i] >= 'a' && s[i] <= 'z') && (i == 0)) /* checks if current char is lowercase & if first char in string  */
-			s[i] = s[i] - ('a' - 'A'); /* if both conditions are true, it converts lowercase to upper by subtracting with ASCII values  */
-		if ((s[i] >= 'a' && s[i] <= 'z') && (not_alpha(s[i - 1]) == 1)) /* checks if current char is lowercase & checks if precedeing char is a word separator */
-			s[i] = s[i] - ('a' - 'A'); /* returns 1 if it is. ^ compares the return value. if == 1, evaluates to true and current char is a word separator */
-		i = i + 1;
+		if (s[index] >= 'a' && s[index] <= 'z') /* checks if current char is lowercase */
+		{
+			if ((index == 0) || (not_alpha(s[index - 1]) == 1)) /* checks if first char in word is lower & if preceding char is a non-alpha. if it is true, result == 1  */
+			{
+				s[index] = s[index] - ('a' - 'A');
+			}
+		}
+		index = index + 1;
 	}
 	return (s);
 }
