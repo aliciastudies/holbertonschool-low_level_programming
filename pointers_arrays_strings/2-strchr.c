@@ -26,5 +26,5 @@ char *_strchr(char *s, char c)
 		}
 		index = index + 1;
 	}
-	return (NULL); /* means character doesn't exist in string */'
+	return (ptr); /* means character doesn't exist in string */
 }
