@@ -29,7 +29,7 @@ void print_diagsums(int *a, int size)
 		forward = forward + size + 1;
 		/* e.g. if size = 3, second loop is 0 = 0 + 3 + 1 == moves forward 4 times */
 		backward = backward + size - 1;
-		/* e.g. if size = 3, second loop is 3 = 3 + 3 - 1 == moves forward 3 times */
+		/* e.g. if size = 3, second loop is 3 = 3 + 3 - 1 == moves forward 2 times */
 	}
 	printf("%d, %d\n", dia_1, dia_2);
 }
