@@ -1,11 +1,12 @@
 #Learning Objectives
-** What is recursion **
+
+**What is recursion**
 
 A programming technique where a function calls itself to solve a problem by breaking it into smaller instances.
 It involves a base case to terminate the recursion.
 
 
-** How to implement recursion **
+**How to implement recursion**
 
 1. Identify the base case: Determine the condition that will terminate the recursion and prevent further function calls.
 This is usually a simple case that can be directly solved without recursion.
@@ -20,7 +21,7 @@ This is the part of the function that provides the termination condition and ret
 This is the part of the function where the function calls itself with modified parameters and combines the results to solve the original problem.
 
 
-** In what situations you should implement recursion **
+**In what situations you should implement recursion**
 
 - Solving problems with inherent recursive structure: Recursion is particularly effective when the problem can be broken down into smaller instances of the same problem.
 
@@ -31,7 +32,7 @@ This is the part of the function where the function calls itself with modified p
 - Working with self-referential or hierarchical data: Recursion is useful when dealing with data that has a hierarchical or self-referential nature. It allows you to traverse and process such data structures effectively.
 
 
-** In what situations you shouldn’t implement recursion **
+**In what situations you shouldn’t implement recursion**
 
 - When efficiency is critical: Each recursive call adds a new stack frame and consumes additional memory.
 This can lead to stack overflow errors or slower execution for large input sizes.
