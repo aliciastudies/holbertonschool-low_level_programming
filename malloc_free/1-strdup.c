@@ -34,25 +34,22 @@ char *_strdup(char *str)
 	char *array;
 	int i;
 
-	array = malloc(sizeof(char) * _strlen(str) + 1);
 	if (str == NULL)
 	{
 		return (NULL);
 	}
 
 	i = 0;
+	array = malloc(sizeof(char) * _strlen(str) + 1);
+	if (array == NULL)
+	{
+		return (NULL);
+	}
 	while (array[i] < _strlen(str))
 	{
 		array[i] = str[i];
 		i = i + 1;
 
 	}
-	if (array == NULL)
-	{
-		return (NULL);
-	}
-	else
-	{
-		return (array);
-	}
+	return (array);
 }
