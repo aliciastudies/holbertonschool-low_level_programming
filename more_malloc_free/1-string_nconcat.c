@@ -32,26 +32,21 @@ unsigned int _strlen(char *s)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *array;
-	unsigned int new_length;
+	unsigned int s1_len;
 	unsigned int i;
 	unsigned int j;
 
 	if (s1 == NULL)
-	{
 		s1 = "";
-
-	}
 	if (s2 == NULL)
-	{
 		s2 = "";
-	}
+	s1_len = _strlen(s1);
 
 	if (n >= _strlen(s2))
 	{
-		new_length = _strlen(s2);
+		n  = _strlen(s2);
 	}
-
-	array = malloc(_strlen(s1) + new_length + 1);
+	array = malloc((s1_len + n + 1) * sizeof(char));
 	if (array == NULL)
 	{
 		return (NULL);
