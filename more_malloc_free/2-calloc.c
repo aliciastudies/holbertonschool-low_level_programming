@@ -18,15 +18,16 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	{
 		return (NULL);
 	}
-	array =  malloc(size * sizeof(int));
+	array =  (int *)malloc(size * sizeof(int));
 	if (array == NULL)
 	{
 		return (NULL);
 	}
+	i = 0;
 	while (i < size)
 	{
-		array[i] = 0;
 		i = i + 1;
+		array[i] = 0;
 	}
 	return (array);
 
