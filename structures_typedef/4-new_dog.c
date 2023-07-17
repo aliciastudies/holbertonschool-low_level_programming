@@ -56,8 +56,7 @@ char *_strdup(char *str)
 }
 
 /**
- * dog_t - creates a new dog
- * @d: data structure used
+ * new_dog - creates a new dog
  * @name: name of dog
  * @age: age of dog
  * @owner: owner of dog
