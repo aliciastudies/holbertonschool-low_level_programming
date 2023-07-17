@@ -14,31 +14,35 @@
 
 char *_strdup(char *str)
 {
-	char *array;
 	int i;
-	int j;
+	char *dup;
 
 	if (str == NULL)
 	{
 		return (NULL);
 	}
+
 	i = 0;
+
 	while (str[i] != '\0')
 	{
 		i = i + 1;
 	}
-	array  = malloc(sizeof(char) * (i + 1));
-	if (array == NULL)
+
+	dup = malloc(i + 1);
+	i = 0;
+
+	while (str[i] != '\0')
 	{
-		return (NULL);
+		if (dup == NULL)
+		{
+			return (NULL);
+		}
+		dup[i] = str[i];
+		i = i + 1;
 	}
-	j = 0;
-	while (j <= i)
-	{
-		array[j] = array[j];
-		j = j + 1;
-	}
-	return (array);
+	dup[i] = '\0';
+	return (dup);
 }
 
 /**
