@@ -3,9 +3,6 @@
 #include <stdio.h>
 #include "dog.h"
 
-#include <stdlib.h>
-#include "main.h"
-
 /**
  * _strlen - length of a string
  * @s: takes parameter pointer to a char
