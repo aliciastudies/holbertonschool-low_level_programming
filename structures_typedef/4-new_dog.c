@@ -4,25 +4,6 @@
 #include "dog.h"
 
 /**
- * _strlen - length of a string
- * @s: takes parameter pointer to a char
- *
- * Return: length of a string
- */
-
-int _strlen(char *s)
-{
-	int counter;
-
-	counter = 0;
-	while (s[counter] != '\0')
-	{
-		counter = counter + 1;
-	}
-	return (counter);
-}
-
-/**
  * _strdup - returns a pointer to a newly allocated space in memory,
  * which contains a copy of the string given as a parameter.
  * @str:pointer to char/string to be copied
@@ -35,23 +16,27 @@ char *_strdup(char *str)
 {
 	char *array;
 	int i;
+	int j;
 
 	if (str == NULL)
 	{
 		return (NULL);
 	}
-
 	i = 0;
-	array = malloc(sizeof(char) * _strlen(str) + 1);
+	while (str[i] != '\0')
+	{
+		i = i + 1;
+	}
+	array  = malloc(sizeof(char) * (i + 1));
 	if (array == NULL)
 	{
 		return (NULL);
 	}
-	while (array[i] < _strlen(str))
+	j = 0;
+	while (j <= i)
 	{
-		array[i] = str[i];
-		i = i + 1;
-
+		array[j] = array[j];
+		j = j + 1;
 	}
 	return (array);
 }
