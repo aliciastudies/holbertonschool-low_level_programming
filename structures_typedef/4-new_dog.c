@@ -1,7 +1,11 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
 #include "dog.h"
+
+#include <stdlib.h>
+#include "main.h"
+
 /**
  * _strlen - length of a string
  * @s: takes parameter pointer to a char
@@ -56,42 +60,38 @@ char *_strdup(char *str)
 }
 
 /**
- * new_dog - creates a new dog
+ * *new_dog - creates a new dog
  * @name: name of dog
  * @age: age of dog
  * @owner: owner of dog
- *
- * Return: NULL if function fails else a pointer to a new struct dog
- *
+ * Return: NULL if func fails, otherwise pointer to new struct dog
  */
-
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *ptr;
-	char *store_name;
-	char *store_owner;
+	dog_t *p;
+	char *namecopy;
+	char *ownercopy;
 
-	ptr = malloc(sizeof(*ptr));
-	if (ptr == NULL)
+	p = malloc(sizeof(*p));
+	if (p == NULL)
 	{
 		return (NULL);
 	}
-	store_name = _strdup(name);
-	if (store_name == NULL)
+	namecopy = _strdup(name);
+	if (namecopy == NULL)
 	{
-		free(ptr);
+		free(p);
 		return (NULL);
 	}
-	ptr->name = store_name;
-	ptr->age = age;
-	store_owner = _strdup(owner);
-	if (store_owner == NULL)
+	p->name = namecopy;
+	p->age = age;
+	ownercopy = _strdup(owner);
+	if (ownercopy == NULL)
 	{
-		free(store_name);
-		free(ptr);
+		free(namecopy);
+		free(p);
 		return (NULL);
 	}
-	ptr->owner = store_owner;
-	return (ptr);
-
+	p->owner = ownercopy;
+	return (p);
 }
