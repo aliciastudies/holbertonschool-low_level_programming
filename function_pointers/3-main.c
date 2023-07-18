@@ -4,6 +4,8 @@
 
 /**
  * main - return pointer to function
+ * @argc: argument counter
+ * @argv: argument array
  *
  * Return: pointer to function.
  */
