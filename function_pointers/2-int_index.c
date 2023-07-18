@@ -6,9 +6,9 @@
  *
  * @array: array to be iterated
  * @size: size of array
- * @action: pointer to a function that takes an int
+ * @cmp: pointer to a function that will be used to compare values
  *
- * Return: Nothing.
+ * Return: -1 if no element matches or if size <= 0, otherwise i
  */
 
 int int_index(int *array, int size, int (*cmp)(int))
