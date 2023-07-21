@@ -10,11 +10,16 @@
 
 int find_root(int n, int i)
 {
-	if (i * i == n)
+	if (i * i == n) /* square of a i is multiplying i by itself */
 	{
 		return (i);
 	}
 	else if (i * i > n)
+	/**
+	 * if the square of i is already greater than n,
+	 * it means that no integer i can exist
+	 * that satisfies the condition i * i = n
+	 */
 	{
 		return (-1);
 	}
