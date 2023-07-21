@@ -1,7 +1,8 @@
-global main
+global main	; entry point for the program
 section .text
 
 main:
+ ; prepare arguments for the write syscall
  mov rax, 1	; write(
  mov rdi, 1	;	STDOUT_FILENO,
  mov rsi, msg	;	"Hello, world!",
@@ -13,7 +14,8 @@ main:
  syscall	; );
 
 section .rodata:
-	msg: db "Hello, World", 10
-	msglen: equ $ - msg
+	msg: db "Hello, World", 10	; the string to print (10 is ascii code for new line)
+	msglen: equ $ - msg		; length of string excluding null terminator
+
 
 
