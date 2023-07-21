@@ -19,7 +19,7 @@ int **alloc_grid(int width, int height)
 	{
 		return (NULL);
 	}
-
+/* array holds the the address of the starting point of an array of *int */
 	array = malloc(sizeof(int *) * height);
 	if (array == NULL)
 	{
@@ -28,10 +28,12 @@ int **alloc_grid(int width, int height)
 	i = 0;
 	while (i < height)
 	{
-		/* allocating memory for each row */
+/* allocating memory for each row */
+/* array[i] is a pointer to the first element of an array of integers */
 		array[i] = malloc(sizeof(int) * width);
 		if (array[i] == NULL)
 		{
+			/* free previously allocated memory if func fails */
 			while (i >= 0)
 			{
 				i = i - 1;
