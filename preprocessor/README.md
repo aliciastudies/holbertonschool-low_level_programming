@@ -7,15 +7,15 @@ Macros are like shortcuts that help simplify coding, and can represent fixed val
 
 **What are the most common predefined macros**
 
-- __FILE__: It gives you the name of the current source code file you are working with.
+- `__FILE__` gives the name of the current source code file being worked on
 
-- __LINE__: It tells you the line number where this macro is used in your code.
+- `__LINE__` shows the line number where this macro is used in the code
 
-- __DATE__: It gives you the current date in a specific format like "Jul 21 2023".
+- `__DATE__` gives the current date in a specific format like "Jul 21 2023".
 
-- __TIME__: It gives you the current time in a specific format like "13:45:30".
+- `__TIME__` gives the current time in a specific format like "13:45:30".
 
-- __STDC__: It is used to check if the compiler follows the standard C rules. It usually has the value 1.
+- `__STDC__` is used to check if the compiler follows the standard C rules. It usually has the value 1.
 
 
 **How to include guard your header files**
