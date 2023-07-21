@@ -6,7 +6,7 @@
  * @argc: counts arguments
  * @argv: store arguments
  *
- * Return: 0
+ * Return: 1 if arg count error or 2 if bytes is neg
  */
 
 int main(int argc, char *argv[])
@@ -36,8 +36,11 @@ int main(int argc, char *argv[])
 		{
 			printf(" ");
 		}
+		else
+		{
+			printf("\n");
+		}
 		index = index + 1;
 	}
-	printf("\n");
 	return (0);
 }
