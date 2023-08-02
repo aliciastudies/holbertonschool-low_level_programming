@@ -10,7 +10,6 @@
  *
  * Return: pointer of new node, otherwise NULL if it fails
  */
-
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *new_node;
@@ -52,6 +51,5 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	end->prev = new_node;
 	new_node->prev = ptr;
 	new_node->next = end;
-
 	return (new_node);
 }
