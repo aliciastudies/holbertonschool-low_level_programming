@@ -3,7 +3,7 @@
 
 /**
  * key_index - write a function that gives you the index of a key
- * @key is the key
+ * @key: the key
  * @size: size of the array of the hash table
  *
  * Return: the index at which the key/value pair should be stored
