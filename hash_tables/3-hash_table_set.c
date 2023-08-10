@@ -14,7 +14,7 @@ hash_node_t *create_new_node(const char *key, const char *value)
 {
 	hash_node_t *new_node;
 
-	new_node = malloc(sizeof(hash_node_t));
+	new_node = malloc(sizeof(*new_node));
 	if (new_node == NULL)
 	{
 		return (NULL);
@@ -49,23 +49,26 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int index;
 	hash_node_t *new_node;
 
-	if (!ht || !key || !*key || !value)
+	if (!ht || !key || !value)
 	{
 		return (0);
 	}
-	index = hash_djb2((unsigned char *)key) % ht->size;
+	index = key_index((const unsigned char *)key, ht->size);
+	new_node = ht->array[index];
+	while (new_node != NULL)
+	{
+		if (strcmp(new_node->key, key) == 0)
+		{
+			free(new_node->value);
+			new_node->value = strdup(value);
+			return (1);
+		}
+		new_node = new_node->next;
+	}
 	new_node = create_new_node(key, value);
 	if (new_node == NULL)
 	{
 		return (0);
-	}
-	if (ht->array[index] != NULL)
-	{
-		if (strcmp(key, ht->array[index]->key) == 0)
-		{
-			ht->array[index]->value = (char *)value;
-			return (1);
-		}
 	}
 	new_node->next = ht->array[index];
 	ht->array[index] = new_node;
