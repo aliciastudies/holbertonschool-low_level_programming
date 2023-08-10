@@ -12,24 +12,25 @@
 
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
-	unsigned long int index;
+
+	unsigned long int value;
+	int index;
 	hash_node_t *node;
-	char *value;
 
 	if (!ht || !key)
 	{
 		return (NULL);
 	}
 	/* calculate index for key */
-	index = key_index((const unsigned char *)key, ht->size);
+	value = hash_djb2((unsigned char *)key);
+	index = value % ht->size;
 	/* traverse the linked list at that index */
 	node = ht->array[index];
 	while (node != NULL)
 	{
 		if (strcmp(node->key, key) == 0)
 		{
-			value = node->value;
-			return (value);
+			return (node->value);
 		}
 		node = node->next;
 	}
